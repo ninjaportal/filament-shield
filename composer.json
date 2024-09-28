@@ -1,0 +1,70 @@
+{
+    "name": "ninjaportal/filament-shield",
+    "description": "Filament support for `spatie/laravel-permission`.",
+    "keywords": [
+        "laravel",
+        "filament",
+        "filament-shield",
+        "permission",
+        "permissions",
+        "roles",
+        "acl",
+        "rbac",
+        "security"
+    ],
+    "homepage": "https://github.com/ninjaportal/ninjaportal",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lordjoo",
+            "email": "youssef.afify122@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "filament/filament": "^3.2",
+        "spatie/laravel-package-tools": "^1.9",
+        "spatie/laravel-permission": "^6.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.0|^8.0",
+        "larastan/larastan": "^2.0",
+        "orchestra/testbench": "^8.0|^9.0",
+        "pestphp/pest": "^2.34",
+        "pestphp/pest-plugin-laravel": "^2.3",
+        "phpstan/extension-installer": "^1.3",
+        "phpstan/phpstan-deprecation-rules": "^1.1",
+        "phpstan/phpstan-phpunit": "^1.3",
+        "phpunit/phpunit": "^10.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "NinjaPortal\\FilamentShield\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {}
+    },
+    "scripts": {},
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NinjaPortal\\FilamentShield\\FilamentShieldServiceProvider"
+            ],
+            "aliases": {
+                "FilamentShield": "NinjaPortal\\FilamentShield\\Facades\\FilamentShield"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
