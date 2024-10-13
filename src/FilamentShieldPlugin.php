@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace NinjaPortal\FilamentShield;
 
+use \Closure;
 use NinjaPortal\FilamentShield\Support\Utils;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
@@ -31,6 +32,13 @@ class FilamentShieldPlugin implements Plugin
                 Resources\RoleResource::class,
             ]);
         }
+    }
+
+    public static function setNavigationGroup(string $group) : void
+    {
+        config([
+            'filament-shield.navigation_group' => $group,
+        ]);
     }
 
     public function boot(Panel $panel): void
