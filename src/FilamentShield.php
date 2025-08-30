@@ -2,6 +2,7 @@
 
 namespace NinjaPortal\FilamentShield;
 
+use InvalidArgumentException;
 use NinjaPortal\FilamentShield\Support\Utils;
 use Closure;
 use Filament\Facades\Filament;
@@ -42,7 +43,7 @@ class FilamentShield
             );
 
             if (Str::contains($identifier, '_')) {
-                throw new \InvalidArgumentException("Permission identifier `$identifier` for `$resource` cannot contain underscores.");
+                throw new InvalidArgumentException("Permission identifier `$identifier` for `$resource` cannot contain underscores.");
             }
 
             return $identifier;

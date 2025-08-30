@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace NinjaPortal\FilamentShield;
 
+use NinjaPortal\FilamentShield\Concerns\CanCustomizeColumns;
+use NinjaPortal\FilamentShield\Concerns\CanLocalizePermissionLabels;
+use NinjaPortal\FilamentShield\Concerns\HasSimpleResourcePermissionView;
+use NinjaPortal\FilamentShield\Resources\RoleResource;
 use \Closure;
 use NinjaPortal\FilamentShield\Support\Utils;
 use Filament\Contracts\Plugin;
@@ -11,9 +15,9 @@ use Filament\Panel;
 
 class FilamentShieldPlugin implements Plugin
 {
-    use Concerns\CanCustomizeColumns;
-    use Concerns\CanLocalizePermissionLabels;
-    use Concerns\HasSimpleResourcePermissionView;
+    use CanCustomizeColumns;
+    use CanLocalizePermissionLabels;
+    use HasSimpleResourcePermissionView;
 
     public static function make(): static
     {
@@ -29,7 +33,7 @@ class FilamentShieldPlugin implements Plugin
     {
         if (! Utils::isResourcePublished()) {
             $panel->resources([
-                Resources\RoleResource::class,
+                RoleResource::class,
             ]);
         }
     }

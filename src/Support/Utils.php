@@ -12,7 +12,7 @@ class Utils
 {
     public static function getFilamentAuthGuard(): string
     {
-        return Filament::getCurrentPanel()?->getAuthGuard() ?? '';
+        return Filament::getCurrentOrDefaultPanel()?->getAuthGuard() ?? '';
     }
 
     public static function isResourcePublished(): bool
